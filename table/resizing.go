@@ -373,13 +373,13 @@ func (r *resizer) maxTotal() (maxTotal int) {
 		}
 	}
 	if r.borderLeft {
-		maxTotal += 1
+		maxTotal++
 	}
 	if r.borderColumn {
 		maxTotal += r.columnCount() - 1
 	}
 	if r.borderRight {
-		maxTotal += 1
+		maxTotal++
 	}
 	return
 }
