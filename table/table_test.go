@@ -159,6 +159,15 @@ func TestTableSetRows(t *testing.T) {
 	golden.RequireEqual(t, []byte(table.String()))
 }
 
+func TestTableWidthEqualsContentLen(t *testing.T) {
+	table := New().
+		Border(lipgloss.NormalBorder()).
+		Wrap(false).Width(10).
+		Row("0123456789")
+
+	golden.RequireEqual(t, []byte(table.String()))
+}
+
 func TestMoreCellsThanHeaders(t *testing.T) {
 	rows := [][]string{
 		{"Chinese", "Nǐn hǎo", "Nǐ hǎo"},
